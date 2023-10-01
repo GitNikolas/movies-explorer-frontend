@@ -1,0 +1,7 @@
+.header__navbar_links{
+  display: flex;
+  flex-direction: row;
+  margin-left:45px;
+  gap:16px;
+  text-decoration: none;
+}

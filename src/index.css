@@ -1,11 +1,18 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
 @import url(./blocks/list-style/list-style.css);
+@import url(./blocks/link/link.css);
 
 @import url(./blocks/page/page.css);
 @import url(./blocks/main/main.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/content/content.css);
+
 @import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__navbar/header__navbar.css);
-@import url(./blocks/header/__navbar/_buttons/header__navbar_buttons.css);
+@import url(./blocks/header/__account-link/header__account-link.css);
+@import url(./blocks/header/__navbar/_links/header__navbar_links.css);
+@import url(./blocks/header/__account-link/_logo/header__account-link_logo.css);
+
+

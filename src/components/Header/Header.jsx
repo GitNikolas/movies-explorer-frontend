@@ -1,6 +1,3 @@
-import logo from '../../images/logo.svg';
-import profile from '../../images/profile.svg';
-
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
@@ -10,26 +7,20 @@ function Header() {
     className="header"
     >
       <nav className="header__navbar">
-        <Link to='/'>
-        <img
-        src={logo}
-        alt='Логотип'
-        />
+        <Link to='/' className="header__logo">
         </Link>
 
-        <ul className="list-style header__navbar_buttons">
-          <li>Фильмы</li>
-          <li>Сохранённые фильмы</li>
-        </ul>
+        <nav className="header__navbar_links">
+        <Link to='/' className='link'>Фильмы</Link>
+        <Link to='/' className='link'>Сохранённые фильмы</Link>
+        </nav>
       </nav>
 
 
-      <Link to='/'>
-      <img
-      src={profile}
-      alt='Логотип'
-      />
-      </Link>
+      <nav className="header__account-link">
+        <Link to='/' className='link'>Аккаунт</Link>
+        <Link to='/' className='header__account-link_logo link'></Link>
+      </nav>
 
     </header>
   );
