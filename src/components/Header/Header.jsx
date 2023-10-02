@@ -17,9 +17,14 @@ function Header() {
       </nav>
 
 
-      <nav className="header__account-link">
+      {/* <nav className="header__account-link">
         <Link to='/' className='link'>Аккаунт</Link>
         <Link to='/' className='header__account-link_logo link'></Link>
+      </nav> */}
+
+      <nav className="header__account-link">
+        <Link to='/' className='link'>Регистрация</Link>
+        <Link to='/' className='header__account-link_signin link'>Войти</Link>
       </nav>
 
     </header>

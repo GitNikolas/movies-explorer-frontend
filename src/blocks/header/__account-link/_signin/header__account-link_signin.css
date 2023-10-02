@@ -1,0 +1,14 @@
+.header__account-link_signin{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width:76px;
+  height:32px;
+  margin-left: 30px;
+  border-radius: 3px;
+  background-color: rgba(61, 220, 132, 1);
+  color: black;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
