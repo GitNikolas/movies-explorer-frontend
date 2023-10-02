@@ -1,9 +1,8 @@
-.header{
+.hero{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  min-height: 560px;
   background-color: rgba(7, 48, 66, 1);
-  padding:0 70px;
-  min-height: 74px;
+    padding: 50px 70px 60px;
 }

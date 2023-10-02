@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from "./Header/Header";
+import Footer from './Footer/Footer';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import Main from './Main/Main';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ name: 'User', email:'email1.email.ru'});
@@ -14,11 +16,11 @@ function App() {
 
       <Header/>
 
-      <main className="main"><p>Мейн</p></main>
+      <Main/>
 
       </div>
 
-      <footer className="footer"><p>Футер</p></footer>
+      <Footer />
 
       </div>
     </CurrentUserContext.Provider>

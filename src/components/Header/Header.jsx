@@ -10,10 +10,10 @@ function Header() {
         <Link to='/' className="header__logo">
         </Link>
 
-        <nav className="header__navbar_links">
+        {/* <nav className="header__navbar_links">
         <Link to='/' className='link'>Фильмы</Link>
         <Link to='/' className='link'>Сохранённые фильмы</Link>
-        </nav>
+        </nav> */}
       </nav>
 
 

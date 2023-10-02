@@ -1,0 +1,11 @@
+.tech__title{
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  border-bottom: 1px solid rgba(218, 218, 218, 1);
+  margin: 0;
+  padding-bottom: 23px;
+  align-self: stretch;
+}

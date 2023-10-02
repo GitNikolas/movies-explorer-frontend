@@ -1,0 +1,10 @@
+.tech__list-item{
+  display: flex;
+  flex-wrap: wrap;
+  width: 90px;
+  height: 60px;
+  background-color: rgba(48, 48, 48, 1);
+  border-radius: 10px;
+  justify-content: center;
+  align-content: center;
+}
