@@ -1,0 +1,5 @@
+.aboutMe__content{
+  display: flex;
+  justify-content: space-between;
+  margin: 66px 0 0;
+}

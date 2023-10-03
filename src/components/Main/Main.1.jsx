@@ -1,15 +1,13 @@
-import { Link, useLocation } from 'react-router-dom';
 import Promo from '../Promo/Promo';
 import AboutProject from '../AboutProject/AboutProject';
 import Techs from '../Techs/Techs';
 import AboutMe from '../AboutMe/AboutMe';
-import Portfolio from '../Portfolio/Portfolio';
 
-function Main() {
+export function Main() {
 
   return (
     <main
-    className="main"
+      className="main"
     >
       <Promo />
 
@@ -19,11 +17,7 @@ function Main() {
 
       <AboutMe />
 
-      <Portfolio />
-
     </main>
 
   );
 }
-
-export default Main;

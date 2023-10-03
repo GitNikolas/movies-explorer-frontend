@@ -1,3 +1,6 @@
 .promo__landing-logo{
   align-self: flex-end;
+  background-image: url('../../../images/text__COLOR_landing-logo.svg');
+  width: 722px;
+  height: 244px;
 }
