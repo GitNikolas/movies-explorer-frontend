@@ -1,0 +1,7 @@
+.aboutProject__illustrarion-subtitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(139, 139, 139, 1);
+  margin: 0;
+}

@@ -16,25 +16,24 @@
 @import url(./blocks/header/__account-link/_logo/header__account-link_logo.css);
 @import url(./blocks/header/__account-link/_signin/header__account-link_signin.css);
 
-@import url(./blocks/hero/hero.css);
-@import url(./blocks/hero/__landing-logo/hero__landing-logo.css);
-@import url(./blocks/hero/__title/hero__title.css);
+@import url(./blocks/promo/promo.css);
+@import url(./blocks/promo/__landing-logo/promo__landing-logo.css);
+@import url(./blocks/promo/__title/promo__title.css);
 
-@import url(./blocks/about/about.css);
-@import url(./blocks/about/__title/about__title.css);
-@import url(./blocks/about/__table/about__table.css);
-@import url(./blocks/about/__table-title/about__table-title.css);
-@import url(./blocks/about/__table-subtitle/about__table-subtitle.css);
-@import url(./blocks/about/__illustration/about__illustrarion.css);
-@import url(./blocks/about/__illustrarion-title/about__illustrarion-title.css);
-@import url(./blocks/about/__illustrarion-title/_type_1week/about__illustrarion-title_type_1week.css);
-@import url(./blocks/about/__illustrarion-title/_type_4week/about__illustrarion-title_type_4week.css);
-@import url(./blocks/about/__illustrarion-subtitle/about__illustrarion-subtitle.css);
+@import url(./blocks/aboutProject/aboutProject.css);
+@import url(./blocks/aboutProject/__title/aboutProject__title.css);
+@import url(./blocks/aboutProject/__table/aboutProject__table.css);
+@import url(./blocks/aboutProject/__table-title/aboutProject__table-title.css);
+@import url(./blocks/aboutProject/__table-subtitle/aboutProject__table-subtitle.css);
+@import url(./blocks/aboutProject/__illustration/aboutProject__illustrarion.css);
+@import url(./blocks/aboutProject/__illustrarion-title/aboutProject__illustrarion-title.css);
+@import url(./blocks/aboutProject/__illustrarion-title/_type_1week/aboutProject__illustrarion-title_type_1week.css);
+@import url(./blocks/aboutProject/__illustrarion-title/_type_4week/aboutProject__illustrarion-title_type_4week.css);
+@import url(./blocks/aboutProject/__illustrarion-subtitle/aboutProject__illustrarion-subtitle.css);
 
-@import url(./blocks/tech/tech.css);
-@import url(./blocks/tech/__title/tech__title.css);
-@import url(./blocks/tech/__text/tech__text.css);
-@import url(./blocks/tech/__subtitle/tech__subtitle.css);
-@import url(./blocks/tech/__list/tech__list.css);
-@import url(./blocks/tech/__list-item/tech__list-item.css);
-
+@import url(./blocks/techs/techs.css);
+@import url(./blocks/techs/__title/techs__title.css);
+@import url(./blocks/techs/__text/techs__text.css);
+@import url(./blocks/techs/__subtitle/techs__subtitle.css);
+@import url(./blocks/techs/__list/techs__list.css);
+@import url(./blocks/techs/__list-item/techs__list-item.css);
