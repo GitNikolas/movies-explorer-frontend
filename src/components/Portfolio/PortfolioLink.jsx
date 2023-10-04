@@ -1,20 +1,22 @@
 import { Link, useLocation } from 'react-router-dom';
 
-function PortfolioLink({children}) {
+function PortfolioLink({link, children}) {
 
   return (
       <div
       className='portfolio__link'
       >
       <Link
-      to='/'
+      to={link}
+      target='_blank'
       className='portfolio__project-name link'
       >
         {children}
       </Link>
 
       <Link
-      to='/'
+      to={link}
+      target='_blank'
       className='link'
       >
         ↗

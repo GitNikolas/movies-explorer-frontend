@@ -4,6 +4,7 @@ import Footer from './Footer/Footer';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Main from './Main/Main';
+import Preloader from '../components/Preloader/Preloader';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ name: 'User', email:'email1.email.ru'});
@@ -18,9 +19,11 @@ function App() {
 
       <Main/>
 
+      {/* <Preloader /> */}
+
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
 
       </div>
     </CurrentUserContext.Provider>

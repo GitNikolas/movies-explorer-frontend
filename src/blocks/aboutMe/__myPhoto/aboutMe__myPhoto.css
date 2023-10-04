@@ -1,5 +1,11 @@
 .aboutMe__myPhoto{
-  height: 320px;
+  height: 327px;
   width: 260px;
   border-radius: 10px;
+}
+
+@media screen and (max-width:768px) {
+  .aboutMe__myPhoto {
+    height: 307px;
+  }
 }

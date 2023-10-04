@@ -11,11 +11,11 @@ function Portfolio() {
       className="portfolio__title"
       >Портфолио</h3>
 
-      <PortfolioLink>Статичный сайт</PortfolioLink>
+      <PortfolioLink link='https://github.com/GitNikolas/how-to-learn'>Статичный сайт</PortfolioLink>
 
-      <PortfolioLink>Адаптивный сайт</PortfolioLink>
+      <PortfolioLink link='https://github.com/GitNikolas/russian-travel'>Адаптивный сайт</PortfolioLink>
 
-      <PortfolioLink>Одностраничное приложение</PortfolioLink>
+      <PortfolioLink link='https://github.com/GitNikolas/react-mesto-api-full-gha'>Одностраничное приложение</PortfolioLink>
 
 
     </section>

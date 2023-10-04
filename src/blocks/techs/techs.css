@@ -5,3 +5,9 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width:768px) {
+  .techs{
+    padding: 87px 50px 90px;
+  }
+}

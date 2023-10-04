@@ -6,7 +6,6 @@
 
 @import url(./blocks/page/page.css);
 @import url(./blocks/main/main.css);
-@import url(./blocks/footer/footer.css);
 @import url(./blocks/content/content.css);
 
 @import url(./blocks/header/header.css);
@@ -46,3 +45,10 @@
 @import url(./blocks/aboutMe/__info/aboutMe__info.css);
 
 @import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/portfolio/__title/portfolio__title.css);
+@import url(./blocks/portfolio/__link/portfolio__link.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__title/footer__title.css);
+@import url(./blocks/footer/__navigaton/footer__navigation.css);
+@import url(./blocks/footer/__menu/footer__menu.css);
