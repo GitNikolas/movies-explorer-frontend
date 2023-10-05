@@ -16,3 +16,12 @@
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width:320px) {
+  .portfolio__link {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    padding: 0 0 8px;
+    margin: 0 0 10px;
+  }
+}

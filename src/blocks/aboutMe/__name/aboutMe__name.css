@@ -6,3 +6,12 @@
   letter-spacing: -2px;
   margin: 0 0 18px;
 }
+
+@media screen and (max-width:320px) {
+  .aboutMe__name {
+    margin: 40px 0 20px;
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+  }
+}

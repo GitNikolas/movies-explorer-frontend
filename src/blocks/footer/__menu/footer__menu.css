@@ -9,3 +9,11 @@
   font-weight: 400;
   line-height: normal;
 }
+
+@media screen and (max-width:320px) {
+  .footer__menu {
+    flex-direction: column;
+    gap:30px;
+
+  }
+}

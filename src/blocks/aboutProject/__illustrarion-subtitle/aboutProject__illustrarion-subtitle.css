@@ -9,3 +9,10 @@
   font-weight: 500;
   line-height: 17px;
 }
+
+@media screen and (max-width:320px) {
+  .aboutProject__illustrarion-subtitle{
+    font-size: 11px;
+    margin: 0;
+  }
+}

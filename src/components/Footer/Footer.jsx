@@ -7,7 +7,7 @@ function Footer() {
       <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
 
       <div className="footer__menu">
-      © 2023
+      <p className="footer__copyright">©2023</p>
 
       <nav className="footer__navigation">
         <Link
@@ -22,7 +22,6 @@ function Footer() {
         >Github</Link>
       </nav>
       </div>
-
 
       </footer>
   );

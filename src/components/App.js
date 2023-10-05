@@ -23,7 +23,7 @@ function App() {
 
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
 
       </div>
     </CurrentUserContext.Provider>
