@@ -3,9 +3,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(7, 48, 66, 1);
   padding:0 70px;
   min-height: 74px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header_type_main{
+  background-color: rgba(7, 48, 66, 1);
 }
 
 @media screen and (max-width:768px) {

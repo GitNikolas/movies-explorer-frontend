@@ -5,19 +5,33 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Main from './Main/Main';
 import Preloader from '../components/Preloader/Preloader';
+import Movies from './Movies/Movies';
+import SavedMovies from './SavedMovies/SavedMovies';
+import Profile from './Profile/Profile';
+import Register from './Register/Register';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ name: 'User', email:'email1.email.ru'});
+
+  const [isAuthorized, setisAuthorized] = React.useState(true);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
 
+      <Header isAuthorized={isAuthorized}/>
+
       <div className="content">
 
-      <Header/>
+      {/* <Profile /> */}
 
-      <Main/>
+      <Register />
+
+      {/* <Movies /> */}
+
+      {/* <SavedMovies /> */}
+
+      {/* <Main/> */}
 
       {/* <Preloader /> */}
 

@@ -5,3 +5,9 @@
   gap:16px;
   text-decoration: none;
 }
+
+@media screen and (max-width:768px) {
+  .header__navbar_links{
+    display: none;
+  }
+}

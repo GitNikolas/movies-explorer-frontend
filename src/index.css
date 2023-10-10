@@ -3,6 +3,7 @@
 @import url(./blocks/list-style/list-style.css);
 @import url(./blocks/link/link.css);
 @import url(./blocks/title/title.css);
+@import url(./blocks/no-scroll/no-scroll.css);
 
 @import url(./blocks/page/page.css);
 @import url(./blocks/main/main.css);
@@ -13,8 +14,10 @@
 @import url(./blocks/header/__navbar/header__navbar.css);
 @import url(./blocks/header/__account-link/header__account-link.css);
 @import url(./blocks/header/__navbar/_links/header__navbar_links.css);
-@import url(./blocks/header/__account-link/_logo/header__account-link_logo.css);
 @import url(./blocks/header/__account-link/_signin/header__account-link_signin.css);
+@import url(./blocks/header/__burger-button/header__burger-button.css);
+@import url(./blocks/header/__burger-button/_oppened/header__burger-button_oppened.css);
+@import url(./blocks/header/__account-link/_type_navigation/header__account-link_type_navigation.css);
 
 @import url(./blocks/promo/promo.css);
 @import url(./blocks/promo/__landing-logo/promo__landing-logo.css);

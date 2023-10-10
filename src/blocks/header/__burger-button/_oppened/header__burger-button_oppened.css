@@ -1,0 +1,25 @@
+.header__burger-button_oppened{
+  animation: transformToCross .3s linear;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  background-image: url(../../../../images/Group.svg);
+  background-size: cover;
+  display: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
+@media screen and (max-width:768px) {
+  .header__burger-button_oppened{
+    display: flex;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .header__burger-button_oppened{
+    width: 40px;
+    height: 43px;
+  }
+}
