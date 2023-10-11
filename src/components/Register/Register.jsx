@@ -20,6 +20,7 @@ function Register() {
             className='register__input'
             defaultValue={testUser.name}
           />
+          <span className='register__input-error'>Поле не должно быть пустым</span>
         </div>
 
         <div className='register__field'>
@@ -28,6 +29,7 @@ function Register() {
             className='register__input'
             defaultValue={testUser.email}
           />
+          <span className='register__input-error'>Введите email</span>
         </div>
 
         <div className='register__field'>
@@ -37,10 +39,14 @@ function Register() {
             className='register__input'
             defaultValue={testUser.password}
           />
-          <span className='register__error'>Неправильный пароль</span>
+          <span className='register__input-error register__input-error_active'>Пароль не должен содержать кириллицу</span>
         </div>
 
       </form>
+
+      <span
+      className='register__error'
+      >При обновлении профиля произошла ошибка.</span>
 
       <SubmitButton>
         Зарегистрироваться
@@ -49,7 +55,7 @@ function Register() {
       Уже зарегистрированы?
       <Link
       to='/login'
-      className='register__login-link link'>Войти</Link>
+      className='register__login-link'>Войти</Link>
       </p>
 
     </section>

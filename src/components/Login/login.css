@@ -1,11 +1,11 @@
-.register{
+.login{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.register__title{
-  text-align: center;
+.login__title{
+  width: 30.9375%;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -13,14 +13,14 @@
   margin: 40px auto 40px;
 }
 
-.register__form{
+.login__form{
   display: flex;
   flex-direction: column;
   margin: 0 auto 186px;
   width: 30.9375%;
 }
 
-.register__field{
+.login__field{
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -33,13 +33,13 @@
   line-height: normal;
 }
 
-.register__caption{
+.login__caption{
   margin: 0;
   color: #8B8B8B;
   font-size: 10px;
 }
 
-.register__caption:last-child{
+.login__caption:last-child{
   color: #8B8B8B;
   text-align: center;
   font-size: 14px;
@@ -47,7 +47,7 @@
   margin: 16px 0 0 0;
 }
 
-.register__input{
+.login__input{
   color: #FFF;
   font-size: 11px;
   font-style: normal;
@@ -60,32 +60,26 @@
   padding: 0 0 10px;
 }
 
-.register__input:focus{
+.login__input:focus{
   outline: none;
   border-bottom: 1px solid rgba(66, 133, 244, 1);
 }
 
-.register__input[type='password']{
+.login__input[type='password']{
   color: #EE3465;
   font-size: 14px;
 }
 
-.register__input-error{
+.login__input-error{
   color: transparent;
   font-size: 10px;
 }
 
-.register__input-error_active{
+.login__input-error_active{
   color: #EE3465;
 }
 
-.register__login-link{
-  margin: 0 0 0 6px;
-  color: rgba(66, 133, 244, 1);
-  text-decoration: none;
-}
-
-.register__error{
+.login__error{
   color: transparent;
   text-align: center;
   font-size: 11px;
@@ -95,6 +89,12 @@
   margin: 0 0 20px;
 }
 
-.register__error_active{
+.login__error_active{
   color: #FF004C;
+}
+
+.login__login-link{
+  margin: 0 0 0 6px;
+  color: rgba(66, 133, 244, 1);
+  text-decoration: none;
 }

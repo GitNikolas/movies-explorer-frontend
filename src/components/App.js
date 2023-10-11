@@ -9,6 +9,8 @@ import Movies from './Movies/Movies';
 import SavedMovies from './SavedMovies/SavedMovies';
 import Profile from './Profile/Profile';
 import Register from './Register/Register';
+import Login from './Login/Login'
+import NotFound from './404/NotFound';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ name: 'User', email:'email1.email.ru'});
@@ -25,7 +27,9 @@ function App() {
 
       {/* <Profile /> */}
 
-      <Register />
+      {/* <Register /> */}
+
+      {/* <Login /> */}
 
       {/* <Movies /> */}
 
@@ -34,6 +38,8 @@ function App() {
       {/* <Main/> */}
 
       {/* <Preloader /> */}
+
+      <NotFound />
 
       </div>
 

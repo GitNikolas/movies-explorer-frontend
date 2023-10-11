@@ -13,13 +13,17 @@ function Profile() {
       <form
       className='profile__form'
       >
+
         <div className='profile__field'>
           Имя
           <input
           className='profile__input'
           defaultValue={testUser.name}
           />
+          <span className='profile__focus'/>
           </div>
+
+        <span className='profile__input-error'>Поле не должно быть пустым</span>
 
         <div className='profile__field'>
           Email
@@ -27,11 +31,15 @@ function Profile() {
           className='profile__input'
           defaultValue={testUser.email}
           />
+          <span className='profile__focus'/>
         </div>
-
-
+        <span className='profile__input-error'>Поле не должно быть пустым</span>
 
       </form>
+
+      <span
+      className='profile__error'
+      >При обновлении профиля произошла ошибка.</span>
 
       <button
       className='profile__edit-button'
