@@ -25,27 +25,67 @@ function App() {
 
       <div className="content">
 
-      {/* <Profile /> */}
+        <Routes>
 
-      {/* <Register /> */}
+          <Route
+          path='/'
+          element={
+          <Main />
+          }
+          />
 
-      {/* <Login /> */}
+          <Route
+          path='/movies'
+          element={
+          <Movies />
+          }
+          />
 
-      {/* <Movies /> */}
+          <Route
+          path='/saved-movies'
+          element={
+          <SavedMovies />
+          }
+          />
 
-      {/* <SavedMovies /> */}
+          <Route
+          path='/signup'
+          element={
+          <Register />
+          }
+          />
 
-      {/* <Main/> */}
+          <Route
+          path='/signin'
+          element={
+          <Login />
+          }
+          />
+
+          <Route
+          path='/profile'
+          element={
+          <Profile />
+          }
+          />
+
+          <Route
+          path='*'
+          element={
+          <NotFound />
+          }
+          />
+
+        </Routes>
 
       {/* <Preloader /> */}
-
-      <NotFound />
 
       </div>
 
       <Footer />
 
       </div>
+
     </CurrentUserContext.Provider>
   );
 }

@@ -11,3 +11,9 @@
   line-height: normal;
   padding: 0;
 }
+
+@media screen and (max-width:320px) {
+  .more-button {
+    width: 240px;
+  }
+}

@@ -3,6 +3,10 @@
   padding: 79px 70px 20px;
 }
 
+.footer_display_none{
+  display: none;
+}
+
 @media screen and (max-width:768px) {
   .footer {
     padding: 79px 30px 20px;

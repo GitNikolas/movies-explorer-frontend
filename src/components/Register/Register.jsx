@@ -8,12 +8,14 @@ function Register() {
 
   return (
     <section className='register'>
-      <p
-        className='register__title'
-      >Добро пожаловать!</p>
+
       <form
         className='register__form'
       >
+      <Link to='/' className="logo" />
+      <p
+        className='register__title'
+      >Добро пожаловать!</p>
         <div className='register__field'>
           <p className='register__caption'>Имя</p>
           <input
@@ -42,19 +44,21 @@ function Register() {
           <span className='register__input-error register__input-error_active'>Пароль не должен содержать кириллицу</span>
         </div>
 
+          <span
+        className='register__error'
+        >При обновлении профиля произошла ошибка.</span>
+
+        <SubmitButton>
+          Зарегистрироваться
+        </SubmitButton>
+
       </form>
 
-      <span
-      className='register__error'
-      >При обновлении профиля произошла ошибка.</span>
 
-      <SubmitButton>
-        Зарегистрироваться
-      </SubmitButton>
       <p className='register__caption'>
       Уже зарегистрированы?
       <Link
-      to='/login'
+      to='/signin'
       className='register__login-link'>Войти</Link>
       </p>
 

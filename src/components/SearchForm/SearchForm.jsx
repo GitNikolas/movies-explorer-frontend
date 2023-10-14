@@ -10,20 +10,25 @@ function SearchForm() {
   return (
     <form className='search-form'>
 
-      <div className='search-form__container'>
 
-      <input
-      className='search-form__input'
-      placeholder='Фильм'
-      />
-      <SearchButton
-      type='submit'
-      />
 
+
+      <div className='search-form__search'>
+        <div className='search-form__container'>
+          <input
+            className='search-form__input'
+            placeholder='Фильм'
+          />
+          <SearchButton
+            type='submit'
+          />
+        </div>
       </div>
 
+
+
       <div
-      className='search-form__filter'
+        className='search-form__filter'
       >
         <Tumbler />
         <p>Короткометражки</p>

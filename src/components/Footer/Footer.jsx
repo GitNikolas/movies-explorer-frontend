@@ -1,9 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 
 function Footer() {
+  let location = useLocation();
 
   return (
-    <footer className="footer">
+    <footer className={`footer ${location.pathname === '/signin' ? 'footer_display_none' : ''}
+    ${location.pathname === '/signup' ? 'footer_display_none' : ''}
+    ${location.pathname === '/profile' ? 'footer_display_none' : ''}`}>
       <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
 
       <div className="footer__menu">

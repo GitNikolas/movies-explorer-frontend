@@ -14,7 +14,7 @@ function NotFound() {
       >Страница не найдена</p>
 
       <Link
-      to='./'
+      to='/'
       className='link not-found__link'
       >
       Назад

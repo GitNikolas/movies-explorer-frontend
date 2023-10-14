@@ -1,6 +1,13 @@
 .not-found{
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(32, 32, 32, 1);
+  z-index: 999;
 }
 
 .not-found__title{
@@ -33,4 +40,20 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+@media screen and (max-width:768px) {
+  .not-found__title{
+    margin:408px 0 3px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .not-found__title{
+    margin:330px 0 3px;
+    font-size: 80px;
+  }
+  .not-found__subtitle{
+    margin:0 auto 284px;
+  }
 }

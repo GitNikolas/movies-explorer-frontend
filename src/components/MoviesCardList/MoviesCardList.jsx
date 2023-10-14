@@ -5,7 +5,7 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import MoreButton from '../UI/More-button/MoreButton';
 
 function MoviesCardList({testData}) {
-
+  let location = useLocation();
 
   return (
     <div className='movies__content'>
@@ -16,7 +16,7 @@ function MoviesCardList({testData}) {
           )
         })}
       </ul>
-      <MoreButton />
+      {location.pathname === '/movies' && <MoreButton />}
     </div>
   );
 }

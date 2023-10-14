@@ -8,10 +8,15 @@
   position: fixed;
   width: 100%;
   box-sizing: border-box;
+  background-color: rgba(32, 32, 32, 1);
 }
 
 .header_type_main{
   background-color: rgba(7, 48, 66, 1);
+}
+
+.header_display_none{
+  display: none;
 }
 
 @media screen and (max-width:768px) {
