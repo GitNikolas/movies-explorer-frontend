@@ -1,0 +1,139 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 70px;
+}
+
+.profile__title{
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 74px auto 123px;
+}
+
+.profile__form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 156px;
+  width: 32.03125%;
+}
+
+.profile__field{
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 0 17px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  flex-wrap: wrap;
+}
+
+.profile__field:first-of-type{
+  border-bottom: 1px solid rgba(66, 66, 66, 1);
+}
+
+.profile__input{
+  color: #FFF;
+  text-align: right;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 80%;
+  background-color: transparent;
+  border: none;
+}
+
+.profile__input:focus {
+  outline: none;
+}
+
+.profile__edit-button{
+  color: white;
+  background-color: transparent;
+  border: none;
+  margin: 0 auto 16px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 32.03125%;
+}
+
+.profile__leave-button{
+  color: rgba(238, 52, 101, 1);
+  background-color: transparent;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  width: 32.03125%;
+  margin: 0 auto 0;
+}
+
+.profile__error{
+  color: transparent;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 20px;
+}
+
+.profile__error_active{
+  color: #FF004C;
+}
+
+
+.profile__input-error{
+  color: transparent;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+
+.profile__input:focus + .profile__input-error {
+  border-bottom: 1px solid rgba(66, 133, 244, 1);
+}
+
+.profile__input-error_active{
+  color: #FF004C;
+}
+
+@media screen and (max-width:768px) {
+  .profile{
+    padding: 236px 0 269px;
+  }
+
+  .profile__title{
+    margin: 0 0 96px;
+  }
+
+  .profile__form{
+    width: 410px;
+    margin: 0 auto 145px;
+  }
+}
+
+@media screen and (max-width:410px) {
+  .profile{
+    padding: 70px 0 40px;
+  }
+
+  .profile__title{
+    margin: 0 0 80px;
+  }
+
+  .profile__form{
+    max-width: 260px;
+    margin: 0 auto 315px;
+  }
+  .profile__leave-button{
+    width: 100%;
+  }
+}

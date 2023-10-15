@@ -1,0 +1,28 @@
+import { React, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
+
+function Header({ isAuthorized }) {
+  let location = useLocation();
+
+  return (
+    <header
+      className={`header ${ location.pathname === '/' ? 'header_type_main' : ''}
+      ${ location.pathname === '/signup' ? 'header_display_none' : ''}
+      ${ location.pathname === '/signin' ? 'header_display_none' : ''}`}
+    >
+
+      <Link to='/' className="logo" />
+
+      {!isAuthorized && <nav className="header__navbar">
+        <Link to='/signup' className='header__link'>Регистрация</Link>
+        <Link to='/signin' className='header__link header__link_type_signin'>Войти</Link>
+      </nav>}
+
+      {isAuthorized && <Navigation/>}
+
+    </header>
+  );
+}
+
+export default Header;

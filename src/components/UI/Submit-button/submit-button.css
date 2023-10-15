@@ -1,0 +1,18 @@
+.submit-button{
+  width: 396px;
+  height: 45px;
+  background-color: rgba(66, 133, 244, 1);
+  border: none;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width:410px) {
+  .submit-button{
+    width: 260px;
+    font-size: 12px;
+  }
+}
