@@ -42,7 +42,6 @@ function Navigation() {
 
       <nav
         className={`navigation ${openMenu ? 'navigation_oppened' : ''}`}
-        onClick={toggleOpenMenu}
       >
         <nav
           className='navigation__menu'
