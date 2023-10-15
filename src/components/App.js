@@ -78,8 +78,6 @@ function App() {
 
         </Routes>
 
-      {/* <Preloader /> */}
-
       </div>
 
       <Footer />

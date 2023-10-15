@@ -7,6 +7,7 @@ function Navigation() {
   const [width, setWidth] = useState(window.innerWidth);
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
+
   function toggleOpenMenu(event) {
     event.stopPropagation();
     setOpenMenu(!openMenu);
@@ -41,6 +42,7 @@ function Navigation() {
 
       <nav
         className={`navigation ${openMenu ? 'navigation_oppened' : ''}`}
+        onClick={toggleOpenMenu}
       >
         <nav
           className='navigation__menu'
