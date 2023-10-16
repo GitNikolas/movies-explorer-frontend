@@ -1,19 +1,24 @@
 .movies__card-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 270px);
   width: 100%;
   gap:38px 20px;
   margin: 0 0 60px;
 }
 
+@media screen and (max-width:1200px) {
+  .movies__card-list {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
+
 @media screen and (max-width:768px) {
   .movies__card-list {
-    width: 100%;
     gap:30px;
   }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:450px) {
   .movies__card-list {
     margin: 0 0 50px;
     gap:34px;

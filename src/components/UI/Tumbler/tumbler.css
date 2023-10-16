@@ -1,7 +1,7 @@
 .invisible-tumbler{
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0;
+  height: 0;
   overflow: hidden;
   clip-path: inset(0 0 0 0);
 }

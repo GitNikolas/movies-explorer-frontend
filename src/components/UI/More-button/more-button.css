@@ -1,6 +1,7 @@
 .more-button {
   background-color: rgba(47, 47, 47, 1);
   border: none;
+  border-radius: 6px;
   width: 320px;
   height: 36px;
   color: #FFF;
