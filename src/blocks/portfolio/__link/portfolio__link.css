@@ -11,6 +11,10 @@
   margin: 0 0 20px;
 }
 
+.portfolio__link::after{
+  content: '↗';
+}
+
 .portfolio__link:last-child{
   border-bottom: none;
   padding: 0;

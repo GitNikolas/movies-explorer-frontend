@@ -21,8 +21,6 @@ function Main() {
 
       <Portfolio />
 
-
-
     </main>
 
   );

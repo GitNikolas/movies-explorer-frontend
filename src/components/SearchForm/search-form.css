@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   height: 40px;
-  margin: 0 19px 0;
+  margin: 0 0 0 19px;
   border-right: 1px solid rgba(66, 66, 66, 1);
   width: 100%;
 }
@@ -28,7 +28,7 @@
 .search-form__container{
   display: flex;
   justify-content: space-between;
-  margin: 0 12px 0 11px;
+  margin: 0 32px 0 11px;
   width: 100%;
 }
 

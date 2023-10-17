@@ -40,17 +40,12 @@ function Navigation() {
       onClick={toggleOpenMenu}
       />
 
-<<<<<<< HEAD
       <nav
         className={`navigation ${openMenu ? 'navigation_oppened' : ''}`}
       >
         <nav
           className='navigation__menu'
         >
-=======
-      <nav className={`navigation ${openMenu ? 'navigation_oppened' : ''}`}>
-        <nav className='navigation__menu'>
->>>>>>> b658274 (изменил поведение фотокарточек при разных разрешениях)
           <Link to='/' className={`navigation__menu-link link
           ${location.pathname === '/' ? 'navigation__menu-link_active' : ''}`}>Главная</Link>
           <Link to='/movies' className={`navigation__menu-link link

@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import PortfolioLink from './PortfolioLink';
 
 function Portfolio() {
 
@@ -11,12 +10,20 @@ function Portfolio() {
       className="portfolio__title"
       >Портфолио</h3>
 
-      <PortfolioLink link='https://github.com/GitNikolas/how-to-learn'>Статичный сайт</PortfolioLink>
+      <Link
+      to='https://github.com/GitNikolas/how-to-learn'
+      className='portfolio__link link'
+      target='_blank'>Статичный сайт</Link>
 
-      <PortfolioLink link='https://github.com/GitNikolas/russian-travel'>Адаптивный сайт</PortfolioLink>
+      <Link
+      to='https://github.com/GitNikolas/russian-travel'
+      className='portfolio__link link'
+      target='_blank'>Адаптивный сайт</Link>
 
-      <PortfolioLink link='https://github.com/GitNikolas/react-mesto-api-full-gha'>Одностраничное приложение</PortfolioLink>
-
+      <Link
+      to='https://github.com/GitNikolas/react-mesto-api-full-gha'
+      className='portfolio__link link'
+      target='_blank'>Одностраничное приложение</Link>
 
     </section>
   );

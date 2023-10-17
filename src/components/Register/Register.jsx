@@ -21,6 +21,7 @@ function Register() {
           <input
             className='register__input'
             defaultValue={testUser.name}
+            required='true'
           />
           <span className='register__input-error'>Поле не должно быть пустым</span>
         </div>
@@ -30,6 +31,8 @@ function Register() {
           <input
             className='register__input'
             defaultValue={testUser.email}
+            required='true'
+            type='email'
           />
           <span className='register__input-error'>Введите email</span>
         </div>
@@ -38,6 +41,7 @@ function Register() {
           <p className='register__caption'>Пароль</p>
           <input
             type='password'
+            required='true'
             className='register__input'
             defaultValue={testUser.password}
           />
