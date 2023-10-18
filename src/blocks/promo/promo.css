@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(7, 48, 66, 1);
-    padding: 50px 70px 60px;
+  padding: 50px 70px 60px;
 }
 
 @media screen and (max-width:768px) {

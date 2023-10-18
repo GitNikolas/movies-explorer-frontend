@@ -6,7 +6,11 @@
   margin: 0 0 60px;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width:1200px) {
+=======
+@media screen and (max-width:1270px) {
+>>>>>>> edcf1b821ffc791587b6e9f374d7bb181d590b9b
   .movies__card-list {
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   }

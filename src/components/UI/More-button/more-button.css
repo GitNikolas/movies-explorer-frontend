@@ -11,6 +11,11 @@
   font-weight: 500;
   line-height: normal;
   padding: 0;
+  cursor: pointer;
+}
+
+.more-button:hover{
+  opacity: .8;
 }
 
 @media screen and (max-width:320px) {
