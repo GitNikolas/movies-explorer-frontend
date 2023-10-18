@@ -8,8 +8,7 @@ function Navigation() {
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
 
-  function toggleOpenMenu(event) {
-    event.stopPropagation();
+  function toggleOpenMenu() {
     setOpenMenu(!openMenu);
     if(!openMenu){
       document.body.classList.add('no-scroll')
@@ -24,6 +23,7 @@ function Navigation() {
       let screenWidth = event.target.innerWidth;
       if(screenWidth > 768) {
         setOpenMenu(false);
+        document.body.classList.remove('no-scroll');
       }
     }
     window.addEventListener('resize', handleResize);

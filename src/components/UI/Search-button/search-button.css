@@ -10,3 +10,7 @@
   line-height: 18px;
   cursor: pointer;
 }
+
+.search-button:hover{
+  opacity: .8;
+}

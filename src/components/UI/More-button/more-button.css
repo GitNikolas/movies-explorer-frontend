@@ -1,6 +1,7 @@
 .more-button {
   background-color: rgba(47, 47, 47, 1);
   border: none;
+  border-radius: 6px;
   width: 320px;
   height: 36px;
   color: #FFF;
@@ -10,6 +11,11 @@
   font-weight: 500;
   line-height: normal;
   padding: 0;
+  cursor: pointer;
+}
+
+.more-button:hover{
+  opacity: .8;
 }
 
 @media screen and (max-width:320px) {

@@ -100,7 +100,7 @@
 
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:425px) {
   .navigation{
     right: -100%;
     width: 100%;

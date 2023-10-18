@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './login.css';
-import { testUser } from '../../utils/constants';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
 
 function Login() {
@@ -22,6 +21,8 @@ function Login() {
           <p className='login__caption'>E-mail</p>
           <input
             className='login__input'
+            required='true'
+            type='email'
           />
           <span className='login__input-error'>Введите email</span>
         </div>
@@ -31,6 +32,7 @@ function Login() {
           <input
             type='password'
             className='login__input'
+            required='true'
           />
           <span className='login__input-error'>Неправильный пароль</span>
         </div>
