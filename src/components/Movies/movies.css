@@ -3,6 +3,11 @@
   padding: 70px 0 0;
 }
 
+.movies__not-found-title {
+  width: 100%;
+  text-align: center;
+}
+
 .movies__content {
   display: flex;
   flex-direction: column;

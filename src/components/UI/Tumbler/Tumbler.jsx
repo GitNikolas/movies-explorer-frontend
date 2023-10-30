@@ -1,13 +1,20 @@
 import { React, useState } from 'react';
 import './tumbler.css';
 
-function Tumbler() {
+function Tumbler({ isChecked, setIsChecked }) {
+
+  function toggleChecked() {
+    localStorage.setItem('isChecked', JSON.stringify(!isChecked));
+    setIsChecked(!isChecked);
+  }
 
   return (
     <label>
       <input
         className='invisible-tumbler'
         type="checkbox"
+        checked={isChecked}
+        onChange = {toggleChecked}
       />
       <span className="visible-tumbler"></span>
     </label>

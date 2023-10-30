@@ -1,41 +1,59 @@
-import { React, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
+import { React, useEffect, useState } from 'react';
 import SearchButton from '../UI/Search-button/Search-button';
 import Tumbler from '../UI/Tumbler/Tumbler';
-import './search-form.css'
+import './search-form.css';
 
-function SearchForm() {
+
+function SearchForm({ values, isChecked, handleChange, setIsChecked, submitSearchForm,
+  errorMessage, clearError, setErrorMessage}) {
+
+  function onSubmit(event) {
+    event.preventDefault();
+    if(!values.name){
+      return setErrorMessage('Нужно ввести ключевое слово');
+    }
+    submitSearchForm({ values, isChecked });
+  }
 
   return (
-    <form className='search-form'>
-
-
-
-
-      <div className='search-form__search'>
-        <div className='search-form__container'>
-          <input
-            className='search-form__input'
-            placeholder='Фильм'
-            required='true'
-          />
-          <SearchButton
-            type='submit'
-          />
-        </div>
-      </div>
-
-
-
-      <div
-        className='search-form__filter'
+    <>
+      <form className='search-form'
+        onSubmit={onSubmit}
+        onClick={clearError}
+        noValidate
       >
-        <Tumbler />
-        <p>Короткометражки</p>
-      </div>
 
-    </form>
+        <div className='search-form__search'>
+          <div className='search-form__container'>
+            <input
+              className='search-form__input'
+              placeholder='Фильм'
+              name='name'
+              value={values.name || ''}
+              onChange={handleChange}
+              required={true}
+            />
+            <SearchButton type='submit'>Найти</SearchButton>
+          </div>
+        </div>
+
+        <div
+          className='search-form__filter'
+        >
+          <Tumbler
+            isChecked={isChecked}
+            setIsChecked={setIsChecked}
+          />
+          <p>Короткометражки</p>
+        </div>
+
+
+
+      </form>
+      { errorMessage !== '' && <span
+          className='search-form__error'
+        >{errorMessage}</span>}
+    </>
   );
 }
 

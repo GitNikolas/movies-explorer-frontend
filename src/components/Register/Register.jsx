@@ -1,16 +1,37 @@
-import { React, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { React, useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './register.css';
-import { testUser } from '../../utils/constants';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
+import { useFormWithValidation } from '../UseForm/UseForm';
+import { register, login } from '../../utils/MainApi';
 
-function Register() {
+function Register({ checkToken }) {
+
+  const { values, errors, isValid, serverMessage, setserverMessage, handleChange, resetServerError } = useFormWithValidation();
+  const navigate = useNavigate();
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    let response = await register(values);
+    if(response.ok){
+      await login(values);
+      await checkToken();
+      navigate('/movies')
+    }
+    else {
+      setserverMessage(response);
+    }
+  }
 
   return (
     <section className='register'>
 
       <form
         className='register__form'
+        onBlur={handleChange}
+        onSubmit={handleSubmit}
+        onClick={resetServerError}
+        noValidate
       >
       <Link to='/' className="logo" />
       <p
@@ -20,39 +41,49 @@ function Register() {
           <p className='register__caption'>Имя</p>
           <input
             className='register__input'
-            defaultValue={testUser.name}
-            required='true'
+            required={true}
+            name='name'
+            onChange={handleChange}
+            value={values.name || ''}
           />
-          <span className='register__input-error'>Поле не должно быть пустым</span>
+          <span className='register__input-error'>{errors.name}</span>
         </div>
 
         <div className='register__field'>
           <p className='register__caption'>E-mail</p>
           <input
             className='register__input'
-            defaultValue={testUser.email}
-            required='true'
+            required={true}
             type='email'
+            name='email'
+            onChange={handleChange}
+            value={values.email || ''}
           />
-          <span className='register__input-error'>Введите email</span>
+          <span className='register__input-error'>{errors.email}</span>
         </div>
 
         <div className='register__field'>
           <p className='register__caption'>Пароль</p>
           <input
             type='password'
-            required='true'
+            required={true}
+            minLength={8}
+            maxLength={30}
             className='register__input'
-            defaultValue={testUser.password}
+            name='password'
+            onChange={handleChange}
+            value={values.password || ''}
           />
-          <span className='register__input-error register__input-error_active'>Пароль не должен содержать кириллицу</span>
+          <span className='register__input-error'>{errors.password}</span>
         </div>
 
           <span
         className='register__error'
-        >При обновлении профиля произошла ошибка.</span>
+        >{serverMessage}</span>
 
-        <SubmitButton>
+        <SubmitButton
+        disabled={isValid ? false : true}
+        >
           Зарегистрироваться
         </SubmitButton>
 

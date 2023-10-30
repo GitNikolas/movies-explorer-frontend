@@ -35,8 +35,13 @@
 .search-form__input{
   background-color: transparent;
   font-size: 18px;
-  width: 50%;
+  width: 90%;
   border: none;
+  color: white;
+}
+
+.search-form__input:focus{
+  outline: none;
 }
 
 .search-form__filter{
@@ -48,6 +53,18 @@
   line-height: 18px;
   font-size: 13px;
   line-height: 18px;
+}
+
+.search-form__error{
+  display: block;
+  margin: 0 auto 30px;
+  width: 90%;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #FF004C;
 }
 
 @media screen and (max-width:768px) {
@@ -110,5 +127,9 @@
     font-size: 11px;
     line-height: 18px;
     height: 110px;
+  }
+
+  .search-form__error{
+    font-size: 12px;
   }
 }
