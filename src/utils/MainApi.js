@@ -1,4 +1,6 @@
-const baseUrl = 'https://api.movies-explorer.pna.nomoredomainsrocks.ru';
+// const baseUrl = 'https://api.movies-explorer.pna.nomoredomainsrocks.ru';
+const baseUrl = 'http://localhost:3001';
+
 
 export async function register({ name, email, password }) {
   try{
@@ -145,7 +147,7 @@ export async function deleteFilm(movieId) {
       method:'DELETE',
       credentials: 'include',
     });
-    return response.json();
+    return response;
   } catch(err) {
     console.error(err);
     return err.message;

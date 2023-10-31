@@ -4,7 +4,6 @@ import './tumbler.css';
 function Tumbler({ isChecked, setIsChecked }) {
 
   function toggleChecked() {
-    localStorage.setItem('isChecked', JSON.stringify(!isChecked));
     setIsChecked(!isChecked);
   }
 

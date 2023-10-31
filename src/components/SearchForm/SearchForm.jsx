@@ -9,9 +9,9 @@ function SearchForm({ values, isChecked, handleChange, setIsChecked, submitSearc
 
   function onSubmit(event) {
     event.preventDefault();
-    if(!values.name){
-      return setErrorMessage('Нужно ввести ключевое слово');
-    }
+    // if(!values.name){
+    //   return setErrorMessage('Нужно ввести ключевое слово');
+    // }
     submitSearchForm({ values, isChecked });
   }
 

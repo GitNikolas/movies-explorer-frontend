@@ -85,7 +85,9 @@ function SavedMovies() {
 
         { filmsNotFound && <h2 className='movies__not-found-title'> Ничего не найдено </h2> }
 
-        <MoviesCardList movieData={movieData} />
+        <MoviesCardList
+        movieData={movieData}
+        setMovieData={setMovieData} />
 
       </div>
 

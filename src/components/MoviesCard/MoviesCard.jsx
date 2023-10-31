@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './movies-card.css'
 import { postFilm, deleteFilm } from '../../utils/MainApi';
 
-function MoviesCard({ data, savedMovieData }) {
+function MoviesCard({ data, savedMovieData, handleCardDelete }) {
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -18,12 +18,12 @@ function MoviesCard({ data, savedMovieData }) {
     return postFilm(data);
   }
 
-  async function handleDeleteFilm() {
+  function handleDeleteFilm() {
     if(data.id){
-      deleteFilm(data.id);
+      return handleCardDelete(data.id)
     }
     else{
-      deleteFilm(data.movieId);
+      return handleCardDelete(data.movieId)
     }
   }
 
