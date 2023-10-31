@@ -1,14 +1,11 @@
 import { React, useState, useContext, useEffect } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import { Link, useLocation, Navigate, useNavigate, } from 'react-router-dom';
 import './profile.css';
 import { signOut, patchUser } from '../../utils/MainApi';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
 import { useFormWithValidation } from '../UseForm/UseForm';
 
 function Profile({ logout }) {
-
-  const navigate = useNavigate();
 
   const { currentUser } = useContext(CurrentUserContext);
 

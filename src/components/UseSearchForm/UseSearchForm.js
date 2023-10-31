@@ -78,7 +78,6 @@ export function useSearchForm () {
 
   useEffect(() => {
     if(searchResult && values.name && !filmsNotFound) {
-      console.log('hello')
       submitSearchForm({ values, isChecked })
     }
   }, [isChecked])
