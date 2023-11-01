@@ -13,7 +13,10 @@ function Login({ checkToken }) {
   async function handleLogin(event) {
     event.preventDefault();
     try {
-      await login(values);
+      let res= await login(values);
+      if(!res.ok){
+        throw new Error(res);
+      }
       await checkToken();
       navigate('/movies');
     }
