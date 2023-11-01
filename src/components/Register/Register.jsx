@@ -5,7 +5,7 @@ import SubmitButton from '../UI/Submit-button/SubmitButton';
 import { useFormWithValidation } from '../UseForm/UseForm';
 import { register, login } from '../../utils/MainApi';
 
-function Register({ checkToken }) {
+function Register({ checkToken, isAuthorized }) {
 
   const { values, errors, isValid, serverMessage, setserverMessage, handleChange, resetServerError } = useFormWithValidation();
   const navigate = useNavigate();
@@ -22,6 +22,12 @@ function Register({ checkToken }) {
       setserverMessage(response);
     }
   }
+
+  useEffect(() => {
+    if(isAuthorized){
+      navigate('/movies');
+    }
+  }, [isAuthorized])
 
   return (
     <section className='register'>

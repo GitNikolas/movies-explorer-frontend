@@ -69,7 +69,8 @@ function App() {
           path='/signup'
           element={
           <Register
-          checkToken = {checkToken}
+          checkToken={checkToken}
+          isAuthorized={isAuthorized}
           />
           }
           />
@@ -78,7 +79,8 @@ function App() {
           path='/signin'
           element={
           <Login
-          checkToken = { checkToken }
+          checkToken={checkToken}
+          isAuthorized={isAuthorized}
           />
           }
           />

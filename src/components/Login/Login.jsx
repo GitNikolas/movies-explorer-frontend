@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
 import { useFormWithValidation } from '../UseForm/UseForm';
 import { login } from '../../utils/MainApi';
 
-function Login({ checkToken }) {
+function Login({ checkToken, isAuthorized }) {
 
   const { values, errors, isValid, serverMessage, setserverMessage, handleChange } = useFormWithValidation();
   const navigate = useNavigate();
@@ -18,13 +18,18 @@ function Login({ checkToken }) {
         throw new Error(res);
       }
       await checkToken();
-      navigate('/movies');
     }
     catch (err) {
       setserverMessage(err.message);
       console.error(err);
     }
   }
+
+  useEffect(() => {
+    if(isAuthorized){
+      navigate('/movies');
+    }
+  }, [isAuthorized])
 
   return (
     <section className='login'>
