@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
@@ -9,10 +9,12 @@ function Login({ checkToken, isAuthorized }) {
 
   const { values, errors, isValid, serverMessage, setserverMessage, handleChange } = useFormWithValidation();
   const navigate = useNavigate();
+  const [ isLoading, setIsLoading ] = useState(false);
 
   async function handleLogin(event) {
-    event.preventDefault();
     try {
+      event.preventDefault();
+      setIsLoading(true);
       let res= await login(values);
       if(!res.ok){
         throw new Error(res);
@@ -22,6 +24,9 @@ function Login({ checkToken, isAuthorized }) {
     catch (err) {
       setserverMessage(err.message);
       console.error(err);
+    }
+    finally{
+      setIsLoading(false);
     }
   }
 
@@ -35,52 +40,58 @@ function Login({ checkToken, isAuthorized }) {
     <section className='login'>
 
       <form
-        className='login__form'
         onBlur={handleChange}
         onSubmit={handleLogin}
         noValidate
       >
 
-        <Link to='/' className="logo" />
-        <p
-          className='login__title'
-        >Рады видеть!</p>
-
-        <div className='login__field'>
-          <p className='login__caption'>E-mail</p>
-          <input
-            className='login__input'
-            required={true}
-            type='email'
-            name='email'
-            onChange={handleChange}
-            value={values.email || ''}
-          />
-          <span className='login__input-error'>{errors.email}</span>
-        </div>
-
-        <div className='login__field'>
-          <p className='login__caption'>Пароль</p>
-          <input
-            type='password'
-            className='login__input'
-            required={true}
-            name='password'
-            onChange={handleChange}
-            value={values.password || ''}
-          />
-          <span className='login__input-error'>{errors.password}</span>
-        </div>
-
-        <span
-        className='login__error'
-        >{serverMessage}</span>
-
-        <SubmitButton
-        disabled={isValid ? false : true}
+        <fieldset
+        className='login__form'
+        disabled={isLoading ? true : false}
         >
-          Войти
-        </SubmitButton>
+
+          <Link to='/' className="logo" />
+          <p
+            className='login__title'
+          >Рады видеть!</p>
+
+          <div className='login__field'>
+            <p className='login__caption'>E-mail</p>
+            <input
+              className='login__input'
+              required={true}
+              type='email'
+              name='email'
+              onChange={handleChange}
+              value={values.email || ''}
+            />
+            <span className='login__input-error'>{errors.email}</span>
+          </div>
+
+          <div className='login__field'>
+            <p className='login__caption'>Пароль</p>
+            <input
+              type='password'
+              className='login__input'
+              required={true}
+              name='password'
+              onChange={handleChange}
+              value={values.password || ''}
+            />
+            <span className='login__input-error'>{errors.password}</span>
+          </div>
+
+          <span
+            className='login__error'
+          >{serverMessage}</span>
+
+          <SubmitButton
+            disabled={isValid ? false : true}
+          >
+            Войти
+          </SubmitButton>
+
+        </fieldset>
 
       </form>
 

@@ -11,8 +11,6 @@ function Movies() {
     filmsNotFound, values, submitSearchForm, isChecked, setIsChecked,
     handleChange, clearError, setErrorMessage} = useSearchForm();
 
-
-
   return (
     <section className='movies'>
       <SearchForm
@@ -24,6 +22,7 @@ function Movies() {
       isChecked = {isChecked}
       handleChange = {handleChange}
       setIsChecked = {setIsChecked}
+      isLoading = {isLoading}
       />
       {isLoading && <Preloader />}
 

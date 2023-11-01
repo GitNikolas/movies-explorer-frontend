@@ -18,6 +18,8 @@
   flex-direction: column;
   margin: 0 auto 16px;
   width: 30.9375%;
+  border: none;
+  padding: 0;
 }
 
 .register__field{

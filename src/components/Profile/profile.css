@@ -18,6 +18,8 @@
   flex-direction: column;
   margin: 0 auto 0;
   width: 32.03125%;
+  border: none;
+  padding: 0;
 }
 
 .profile__field{

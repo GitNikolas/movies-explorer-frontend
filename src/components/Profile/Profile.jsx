@@ -13,6 +13,8 @@ function Profile({ logout }) {
 
   const { values, setValues, errors, isValid, serverMessage, setserverMessage, handleChange, resetServerError } = useFormWithValidation();
 
+  const [ isLoading, setIsLoading ] = useState(false);
+
   async function handleSignOut(event) {
     try {
       event.preventDefault();
@@ -36,10 +38,10 @@ function Profile({ logout }) {
   }
 
     async function handleSubmit(event) {
-    event.preventDefault();
     try{
+      event.preventDefault();
+      setIsLoading(true);
       let response = await patchUser(values);
-      console.log(response);
       if(response.ok){
         setCurrentUser(values);
         setserverMessage('Профиль успешно обновлён');
@@ -53,6 +55,9 @@ function Profile({ logout }) {
     catch(err) {
       setserverMessage(err);
     }
+    finally{
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -65,58 +70,65 @@ function Profile({ logout }) {
         className='profile__title'
       >Привет, {currentUser.name}!</p>
       <form
-        className='profile__form'
         onBlur={handleChange}
         onSubmit={handleSubmit}
         noValidate
       >
-        <div className='profile__field'>
-          Имя
-          <input
-            className='profile__input'
-            name='name'
-            value={values.name || ''}
-            onChange={handleChange}
-            disabled={ isEdit ? false : true}
-            required = {true}
-            minLength={2}
-            maxLength={30}
-          />
-        <span className='profile__input-error'>{errors.name}</span>
-        </div>
+
+        <fieldset
+          className='profile__form'
+          disabled={isLoading ? true : false}
+        >
+
+          <div className='profile__field'>
+            Имя
+            <input
+              className='profile__input'
+              name='name'
+              value={values.name || ''}
+              onChange={handleChange}
+              disabled={isEdit ? false : true}
+              required={true}
+              minLength={2}
+              maxLength={30}
+            />
+            <span className='profile__input-error'>{errors.name}</span>
+          </div>
 
 
-        <div className='profile__field'>
-          Email
-          <input
-            className='profile__input'
-            name='email'
-            type='email'
-            value={values.email || ''}
-            onChange={handleChange}
-            disabled={ isEdit ? false : true}
-            required = {true}
-          />
-        <span className='profile__input-error'>{errors.email}</span>
-        </div>
+          <div className='profile__field'>
+            Email
+            <input
+              className='profile__input'
+              name='email'
+              type='email'
+              value={values.email || ''}
+              onChange={handleChange}
+              disabled={isEdit ? false : true}
+              required={true}
+            />
+            <span className='profile__input-error'>{errors.email}</span>
+          </div>
 
-      <span
-        className='profile__error'
-      >{serverMessage}</span>
+          <span
+            className='profile__error'
+          >{serverMessage}</span>
 
-        {isEdit && <SubmitButton
-          disabled={ (isValid && (currentUser.name !== values.name || currentUser.email !== values.email)) ? false : true}
-        >Сохранить</SubmitButton>}
+          {isEdit && <SubmitButton
+            disabled={(isValid && (currentUser.name !== values.name || currentUser.email !== values.email)) ? false : true}
+          >Сохранить</SubmitButton>}
 
-      { !isEdit && <button
-        className='profile__edit-button'
-        onClick={handleProfileEdit}
-      >Редактировать</button>}
+          {!isEdit && <button
+            className='profile__edit-button'
+            onClick={handleProfileEdit}
+          >Редактировать</button>}
 
-      { !isEdit && <button
-        className='profile__leave-button'
-        onClick={handleSignOut}
-      >Выйти из аккаунта</button>}
+          {!isEdit && <button
+            className='profile__leave-button'
+            onClick={handleSignOut}
+          >Выйти из аккаунта</button>}
+
+        </fieldset>
 
       </form>
 

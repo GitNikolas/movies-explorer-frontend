@@ -19,7 +19,6 @@ function SavedMovies() {
 
   const { values, setValues, isChecked, setIsChecked, handleChange } = useForm();
 
-
   async function getMovies() {
     try{
       setIsLoading(true);
@@ -78,6 +77,7 @@ function SavedMovies() {
         isChecked = {isChecked}
         handleChange = {handleChange}
         setIsChecked = {setIsChecked}
+        isLoading = {isLoading}
       />
 
       <div className='movies__content'>
