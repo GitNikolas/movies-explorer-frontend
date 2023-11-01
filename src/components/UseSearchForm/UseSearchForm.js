@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { useForm } from "../UseForm/UseForm";
 import { getFilms }  from '../../utils/MoviesApi';
 import { getUserFilms } from '../../utils/MainApi';
+import { shortFilmDuration } from "../../utils/constants";
 
 export function useSearchForm () {
 
@@ -27,7 +28,7 @@ export function useSearchForm () {
       const result = filmList.filter(item => item.nameRU.toLowerCase().includes(values.name.toLowerCase())
       || item.nameEN.toLowerCase().includes(values.name.toLowerCase()) );
       if(isChecked) {
-        const shortFilm = result.filter((film) => film.duration <= 40);
+        const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
         if(shortFilm.length === 0){
           setFilmsNotFound(true);
         }

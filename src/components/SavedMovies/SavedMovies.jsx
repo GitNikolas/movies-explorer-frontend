@@ -6,6 +6,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from '../Preloader/Preloader';
 import { useForm } from '../UseForm/UseForm';
 import { getUserFilms } from '../../utils/MainApi';
+import { shortFilmDuration } from "../../utils/constants";
 
 function SavedMovies() {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +37,7 @@ function SavedMovies() {
   function submitSearchForm({ values, isChecked }) {
     const result = movieData.filter(item => item.nameRU.toLowerCase().includes(values.name.toLowerCase()) || item.nameEN.toLowerCase().includes(values.name.toLowerCase()));
     if (isChecked) {
-      const shortFilm = result.filter((film) => film.duration <= 40);
+      const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
       if (shortFilm.length === 0) {
         setFilmsNotFound(true);
       }
@@ -53,7 +54,7 @@ function SavedMovies() {
   }
 
   function filterShortFilms() {
-    let shortFilms = movieData.filter(item => item.duration <= 40);
+    let shortFilms = movieData.filter(item => item.duration <= shortFilmDuration);
     return setMovieData(shortFilms);
   }
 

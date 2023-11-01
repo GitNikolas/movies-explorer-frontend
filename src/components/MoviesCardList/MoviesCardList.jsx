@@ -5,6 +5,9 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import MoreButton from '../UI/More-button/MoreButton';
 import { deleteFilm } from '../../utils/MainApi';
 import InfoTooltip from '../Popups/InfoTooltip/InfoTooltip';
+import { desktopSize, tabSize, mobileSize, zeroSize, desktopSizeIncrement,
+tabSizeIncrement, mobileSizeIncrement, zeroSizeIncrement, desktopDefaultCards,
+tabDefaultCards, mobileDefaultCards, zeroSizeDefaultCards } from '../../utils/constants';
 
 function MoviesCardList({ movieData, savedMovieData, setMovieData }) {
   let location = useLocation();
@@ -16,17 +19,17 @@ function MoviesCardList({ movieData, savedMovieData, setMovieData }) {
   const [serverError, setServerError] = useState('');
 
   function getMoreCards() {
-    if(screenWidth >= 1280) {
-      setAmountCards(amountCards + 4)
+    if(screenWidth >= desktopSize) {
+      setAmountCards(amountCards + desktopSizeIncrement)
     }
-    else if(screenWidth >= 990) {
-      setAmountCards(amountCards + 3)
+    else if(screenWidth >= tabSize) {
+      setAmountCards(amountCards + tabSizeIncrement)
     }
-    else if(screenWidth >= 450){
-      setAmountCards(amountCards + 2)
+    else if(screenWidth >= mobileSize){
+      setAmountCards(amountCards + mobileSizeIncrement)
     }
-    else if(screenWidth >= 0){
-      setAmountCards(amountCards + 2)
+    else if(screenWidth >= zeroSize){
+      setAmountCards(amountCards + zeroSizeIncrement)
     }
   }
 
@@ -52,17 +55,17 @@ function MoviesCardList({ movieData, savedMovieData, setMovieData }) {
       setScreenWidth(event.target.innerWidth);
     }
     setAmountCards(0);
-    if(screenWidth >= 1280) {
-      setAmountCards(16)
+    if(screenWidth >= desktopSize) {
+      setAmountCards(desktopDefaultCards)
     }
-    else if(screenWidth >= 990) {
-      setAmountCards(12)
+    else if(screenWidth >= tabSize) {
+      setAmountCards(tabDefaultCards)
     }
-    else if(screenWidth >= 450){
-      setAmountCards(8)
+    else if(screenWidth >= mobileSize){
+      setAmountCards(mobileDefaultCards)
     }
-    else if(screenWidth >= 0){
-      setAmountCards(5)
+    else if(screenWidth >= zeroSize){
+      setAmountCards(zeroSizeDefaultCards)
     }
     window.addEventListener('resize', handleResize);
     return () => {

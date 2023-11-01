@@ -1,5 +1,5 @@
-import { React, useState, useContext, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import SubmitButton from '../UI/Submit-button/SubmitButton';
 import { useFormWithValidation } from '../UseForm/UseForm';
@@ -25,7 +25,6 @@ function Login({ checkToken }) {
       console.error(err);
     }
   }
-
 
   return (
     <section className='login'>
