@@ -34,5 +34,5 @@ export function useAuthorization() {
     checkToken();
   }, []);
 
-  return { isAuthorized, currentUser, checkToken, logout };
+  return { isAuthorized, currentUser, setCurrentUser, checkToken, logout };
 }

@@ -15,10 +15,10 @@ import { useAuthorization } from './UseAuthorization/UseAuthorization';
 
 function App() {
 
-  const { isAuthorized, currentUser, checkToken, logout } = useAuthorization();
+  const { isAuthorized, currentUser, setCurrentUser, checkToken, logout } = useAuthorization();
 
   return (
-    <CurrentUserContext.Provider value={{ currentUser, isAuthorized }}>
+    <CurrentUserContext.Provider value={{ currentUser, setCurrentUser, isAuthorized }}>
       <div className="page">
 
       <Header />

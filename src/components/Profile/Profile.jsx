@@ -7,7 +7,7 @@ import { useFormWithValidation } from '../UseForm/UseForm';
 
 function Profile({ logout }) {
 
-  const { currentUser } = useContext(CurrentUserContext);
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
 
   const [ isEdit, setIsEdit ] = useState(false);
 
@@ -40,6 +40,7 @@ function Profile({ logout }) {
     try{
       let response = await patchUser(values);
       if(response.ok){
+        setCurrentUser(values);
         setserverMessage('Профиль успешно обновлён');
         setTimeout(resetServerError, 3000);
         setIsEdit(false);
@@ -61,7 +62,7 @@ function Profile({ logout }) {
     <section className='profile'>
       <p
         className='profile__title'
-      >Привет, UserName!</p>
+      >Привет, {currentUser.name}!</p>
       <form
         className='profile__form'
         onBlur={handleChange}
