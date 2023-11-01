@@ -1,4 +1,4 @@
-import { React, useEffect, useMemo, useState } from 'react';
+import { React } from 'react';
 import './movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';

@@ -1,10 +1,14 @@
-import React from 'react';
+import {React, useContext} from 'react';
 import { Navigate } from "react-router-dom";
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import Preloader from '../Preloader/Preloader';
 
-function ProtectedRoute ({ component: Component, ...props }) {
+function ProtectedRoute ({ component: Component, isAuthorized,  ...props }) {
+
+  const { dataIsReady } = useContext(CurrentUserContext);
 
   return (
-    props.isAuthorized ? <Component {...props} /> : <Navigate to="/" replace />
+    dataIsReady ? (isAuthorized ? <Component {...props} /> : <Navigate to="/" replace />) : < Preloader />
   )
 }
 

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function useAuthorization() {
   const [isAuthorized, setisAuthorized] = useState(false);
+  const [ dataIsReady, setdataIsReady ] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
 
@@ -22,6 +23,9 @@ export function useAuthorization() {
     catch(err) {
       console.error(err);
     }
+    finally{
+      setdataIsReady(true);
+    }
   }
 
   function logout() {
@@ -34,5 +38,5 @@ export function useAuthorization() {
     checkToken();
   }, []);
 
-  return { isAuthorized, currentUser, setCurrentUser, checkToken, logout };
+  return { isAuthorized, dataIsReady, currentUser, setCurrentUser, checkToken, logout };
 }
