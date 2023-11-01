@@ -23,7 +23,6 @@ export function useFormWithValidation() {
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
   const [ serverMessage, setserverMessage ] = React.useState('');
-  const { currentUser } = useContext(CurrentUserContext);
    const handleChange = (event) => {
     const target = event.target;
     const name = target.name;

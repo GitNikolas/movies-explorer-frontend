@@ -74,7 +74,8 @@ export async function patchUser({ name, email }) {
       body: JSON.stringify({ name, email }),
     });
     if(!response.ok){
-      throw new Error('Введите корректные данные');
+      let message = await response.json();
+      throw new Error(message.message);
     };
     return response;
   } catch(err) {

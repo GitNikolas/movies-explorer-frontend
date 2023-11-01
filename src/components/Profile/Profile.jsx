@@ -39,6 +39,7 @@ function Profile({ logout }) {
     event.preventDefault();
     try{
       let response = await patchUser(values);
+      console.log(response);
       if(response.ok){
         setCurrentUser(values);
         setserverMessage('Профиль успешно обновлён');
