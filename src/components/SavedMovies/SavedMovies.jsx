@@ -37,10 +37,10 @@ function SavedMovies() {
     const result = await getUserFilms();
     setMovieData(result);
     setFilmsNotFound(false);
-
     if (!values.name) {
       if (isChecked) {
         const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
+        setMovieData(shortFilm);
         if (shortFilm.length === 0) {
           setMovieData(shortFilm);
           return setFilmsNotFound(true);
@@ -69,6 +69,7 @@ function SavedMovies() {
   }
 
 useEffect(() => {
+  console.log(movieData)
   submitSearchForm({ values, isChecked });
 }, [isChecked])
 

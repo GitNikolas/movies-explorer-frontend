@@ -2,6 +2,7 @@ import { React, useEffect, useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './movies-card.css'
 import { postFilm, deleteFilm } from '../../utils/MainApi';
+import { shortFilmDuration }  from '../../utils/constants';
 
 function MoviesCard({ data, savedMovieData, handleCardDelete }) {
 
@@ -73,7 +74,7 @@ function MoviesCard({ data, savedMovieData, handleCardDelete }) {
 
       <p
       className='movies-card__duration'
-      >{ data.duration > 60 ?  `${Math.round(data.duration/60)}ч ${data.duration%60}м` : `${data.duration%60}м`}</p>
+      >{ data.duration > shortFilmDuration ?  `${Math.round(data.duration/60)}ч ${data.duration%60}м` : `${data.duration%60}м`}</p>
     </li>
   );
 }
