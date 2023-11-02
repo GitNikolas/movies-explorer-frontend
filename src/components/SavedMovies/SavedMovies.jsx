@@ -42,6 +42,7 @@ function SavedMovies() {
       if (isChecked) {
         const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
         if (shortFilm.length === 0) {
+          setMovieData(shortFilm);
           return setFilmsNotFound(true);
         }
         return setMovieData(shortFilm);
@@ -66,10 +67,6 @@ function SavedMovies() {
   function clearError() {
     setErrorMessage('');
   }
-
-  useEffect(() => {
-    getMovies();
-  }, [])
 
 useEffect(() => {
   submitSearchForm({ values, isChecked });

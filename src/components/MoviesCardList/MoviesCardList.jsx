@@ -94,7 +94,6 @@ function MoviesCardList({ movieData, savedMovieData, setMovieData }) {
             handleCardDelete={handleCardDelete}
           />)}
 
-
       </ul>
       {movieData && (amountCards && location.pathname === '/movies') && amountCards < movieData.length && <MoreButton onClick={getMoreCards} />}
     </>

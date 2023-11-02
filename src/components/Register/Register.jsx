@@ -27,10 +27,8 @@ function Register({ checkToken, isAuthorized }) {
       }
     }
     catch(err){
-      console.error(err);
-    }
-    finally{
       setIsLoading(false);
+      console.error(err);
     }
   }
 

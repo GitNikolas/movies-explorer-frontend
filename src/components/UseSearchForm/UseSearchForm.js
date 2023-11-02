@@ -6,7 +6,7 @@ import { shortFilmDuration } from "../../utils/constants";
 
 export function useSearchForm () {
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
 
   const [ searchResult, setSearchResult ] = useState(null);
 

@@ -22,11 +22,9 @@ function Login({ checkToken, isAuthorized }) {
       await checkToken();
     }
     catch (err) {
+      setIsLoading(false);
       setserverMessage(err.message);
       console.error(err);
-    }
-    finally{
-      setIsLoading(false);
     }
   }
 
