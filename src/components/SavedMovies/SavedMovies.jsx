@@ -33,37 +33,46 @@ function SavedMovies() {
     }
   }
 
-  function submitSearchForm({ values, isChecked }) {
-    const result = movieData.filter(item => item.nameRU.toLowerCase().includes(values.name.toLowerCase()) || item.nameEN.toLowerCase().includes(values.name.toLowerCase()));
+  async function submitSearchForm({ values, isChecked }) {
+    const result = await getUserFilms();
+    setMovieData(result);
+    setFilmsNotFound(false);
+
+    if (!values.name) {
+      if (isChecked) {
+        const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
+        if (shortFilm.length === 0) {
+          return setFilmsNotFound(true);
+        }
+        return setMovieData(shortFilm);
+      }
+      return
+    }
+
+    const filter = result.filter(item => item.nameRU.toLowerCase().includes(values.name.toLowerCase())|| item.nameEN.toLowerCase().includes(values.name.toLowerCase()));
     if (isChecked) {
-      const shortFilm = result.filter((film) => film.duration <= shortFilmDuration);
+      const shortFilm = filter.filter((film) => film.duration <= shortFilmDuration);
       if (shortFilm.length === 0) {
         setFilmsNotFound(true);
       }
       return setMovieData(shortFilm);
     }
-    if (result.length === 0) {
+    if (filter.length === 0) {
       setFilmsNotFound(true);
     }
-    setMovieData(result);
+    setMovieData(filter);
   }
 
   function clearError() {
     setErrorMessage('');
   }
 
-  function filterShortFilms() {
-    let shortFilms = movieData.filter(item => item.duration <= shortFilmDuration);
-    return setMovieData(shortFilms);
-  }
-
   useEffect(() => {
-    if(isChecked){
-      filterShortFilms();
-    }
-    else {
-      getMovies();
-    }
+    getMovies();
+  }, [])
+
+useEffect(() => {
+  submitSearchForm({ values, isChecked });
 }, [isChecked])
 
   return (
