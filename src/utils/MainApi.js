@@ -1,4 +1,6 @@
-const baseUrl = 'https://api.movies-explorer.pna.nomoredomainsrocks.ru';
+// const baseUrl = 'https://api.movies-explorer.pna.nomoredomainsrocks.ru';
+const baseUrl = 'http://localhost:3001';
+
 
 export async function register({ name, email, password }) {
   try{

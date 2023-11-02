@@ -51,26 +51,32 @@ function MoviesCardList({ movieData, savedMovieData, setMovieData }) {
   }
 
   useEffect(() => {
-    function handleResize (event) {
-      setScreenWidth(event.target.innerWidth);
+    if(location.pathname === '/movies'){
+      function handleResize (event) {
+        setScreenWidth(event.target.innerWidth);
+      }
+      setAmountCards(0);
+      if(screenWidth >= desktopSize) {
+        setAmountCards(desktopDefaultCards)
+      }
+      else if(screenWidth >= tabSize) {
+        setAmountCards(tabDefaultCards)
+      }
+      else if(screenWidth >= mobileSize){
+        setAmountCards(mobileDefaultCards)
+      }
+      else if(screenWidth >= zeroSize){
+        setAmountCards(zeroSizeDefaultCards)
+      }
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      }
     }
-    setAmountCards(0);
-    if(screenWidth >= desktopSize) {
-      setAmountCards(desktopDefaultCards)
+    else {
+      setAmountCards(Infinity);
     }
-    else if(screenWidth >= tabSize) {
-      setAmountCards(tabDefaultCards)
-    }
-    else if(screenWidth >= mobileSize){
-      setAmountCards(mobileDefaultCards)
-    }
-    else if(screenWidth >= zeroSize){
-      setAmountCards(zeroSizeDefaultCards)
-    }
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
+
   }, [screenWidth, movieData])
 
   return (
