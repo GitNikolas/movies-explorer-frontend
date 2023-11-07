@@ -18,6 +18,8 @@
   flex-direction: column;
   margin: 0 auto 16px;
   width: 396px;
+  border: none;
+  padding: 0;
 }
 
 .login__field{
@@ -76,9 +78,7 @@
 .login__input-error{
   color: transparent;
   font-size: 10px;
-}
-
-.login__input-error_active{
+  min-height: 12px;
   color: #EE3465;
 }
 
@@ -89,10 +89,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  min-height: 14px;
   margin: 0 0 20px;
-}
-
-.login__error_active{
   color: #FF004C;
 }
 

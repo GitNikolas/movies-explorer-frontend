@@ -1,11 +1,13 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import './search-button.css';
 
-function SearchButton() {
+function SearchButton({ children, ...props}) {
 
   return (
-    <button className='search-button'>
-      Найти
+    <button className='search-button'
+    {...props}
+    >
+      {children}
     </button>
   );
 }
