@@ -6,6 +6,7 @@
   width: 100%;
   transition: transform .4s linear;
   overflow: auto;
+  box-sizing: border-box;
 }
 
 .navigation__menu{
