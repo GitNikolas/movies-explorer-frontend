@@ -9,7 +9,9 @@ function Navigation() {
   const location = useLocation();
 
   function toggleOpenMenu() {
-    setOpenMenu(!openMenu);
+    if(width <= 768) {
+      setOpenMenu(!openMenu);
+    }
     if(!openMenu){
       document.body.classList.add('no-scroll')
     } else {
@@ -40,7 +42,7 @@ function Navigation() {
       onClick={toggleOpenMenu}
       />
 
-      <nav className={`navigation ${openMenu ? 'navigation_oppened' : ''}`}>
+      <nav className={`navigation ${openMenu ? 'navigation_oppened' : ''}`} onClick={toggleOpenMenu}>
         <nav className='navigation__menu'>
           <Link to='/' className={`navigation__menu-link link
           ${location.pathname === '/' ? 'navigation__menu-link_active' : ''}`}>Главная</Link>

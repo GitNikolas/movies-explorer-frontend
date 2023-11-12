@@ -30,6 +30,7 @@ export function useAuthorization() {
 
   function logout() {
     setisAuthorized(false);
+    localStorage.clear();
     setCurrentUser(null);
     navigate('/');
   }

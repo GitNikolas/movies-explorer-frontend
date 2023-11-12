@@ -1,6 +1,5 @@
 const baseUrl = 'https://api.movies-explorer.pna.nomoredomainsrocks.ru';
 
-
 export async function register({ name, email, password }) {
   try{
     let response = await fetch(`${baseUrl}/signup`, {

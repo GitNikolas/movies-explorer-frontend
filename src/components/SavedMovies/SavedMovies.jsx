@@ -69,7 +69,6 @@ function SavedMovies() {
   }
 
 useEffect(() => {
-  console.log(movieData)
   submitSearchForm({ values, isChecked });
 }, [isChecked])
 
