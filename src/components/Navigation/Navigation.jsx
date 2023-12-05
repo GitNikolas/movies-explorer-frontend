@@ -11,11 +11,11 @@ function Navigation() {
   function toggleOpenMenu() {
     if(width <= 768) {
       setOpenMenu(!openMenu);
-    }
-    if(!openMenu){
-      document.body.classList.add('no-scroll')
-    } else {
-      document.body.classList.remove('no-scroll')
+      if(!openMenu){
+        document.body.classList.add('no-scroll')
+      } else {
+        document.body.classList.remove('no-scroll')
+      }
     }
   }
 
