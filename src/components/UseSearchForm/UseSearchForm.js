@@ -54,6 +54,8 @@ export function useSearchForm () {
     setErrorMessage('');
   }
 
+  // Ищем фильмы которые сохранил данный юзер чтобы отобразить лайки
+
   async function getSavedFilms() {
     let films = await getUserFilms();
     if(films) {
@@ -64,7 +66,7 @@ export function useSearchForm () {
   useEffect(() => {
     getSavedFilms();
     if(localStorage.movies){
-      let movies = JSON.parse( localStorage.movies );
+      let movies = JSON.parse(localStorage.movies);
       setSearchResult(movies);
     }
     if(localStorage.values){

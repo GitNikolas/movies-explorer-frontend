@@ -1,5 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
-import me from '../../images/IMG_20230907_095722.jpg'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import me from '../../images/IMG_20230907_095722.jpg';
 
 function AboutMe() {
   return (
@@ -12,7 +13,7 @@ function AboutMe() {
       >
         <div className="aboutMe__profile">
           <p className="aboutMe__name">Николай</p>
-          <p className="aboutMe__status">Студент курса "веб-разработчик", 25 лет</p>
+          <p className="aboutMe__status">Студент курса "веб-разработчик", 26 лет</p>
           <p className="aboutMe__info">Я родился и живу в городе Чита. Люблю путешествовать. С 2019 года работаю в ОАО "РЖД", но решил сменить сферу деятельности и учусь Web-разработке. 😉</p>
 
           <Link

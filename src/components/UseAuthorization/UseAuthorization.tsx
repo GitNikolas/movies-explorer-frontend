@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { getUser } from '../../utils/MainApi';
 import { useNavigate } from 'react-router-dom';
 
